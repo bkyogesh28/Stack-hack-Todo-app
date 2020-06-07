@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('recaptchaContainer', {
+                'sitekey': '6Le1aAAVAAAAAD_aODHJbs4OyJjHZ4MoUzZvNDBj',
+                theme: "light",
+                size: "normal"
+            });
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <div class="form-body without-side">
+
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="images/Wireframe.png" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Register new account</h3>
+                        <p>Get access to TODO-App</p>
+                        <form action="/register" method="POST">
+                            <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                            <input class="form-control" type="email" name="username" placeholder="E-mail Address" required>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Register</button>
+                            </div><br>
+                            <div id="recaptchaContainer" style="transform:scale(0.8);transform-origin:0 0"></div>
+                        </form>
+                        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                        <div class="other-links">
+                            <div class="text">Or register with</div>
+                            <a href="/auth/google"><img src="https://img.icons8.com/clouds/25/000000/google-logo.png" />Google</a>
+                            <!-- <a href="/auth/facebook"><img src="https://img.icons8.com/clouds/25/000000/facebook-new.png" />Facebook</a> -->
+                            <a href="/auth/github"><img src="https://img.icons8.com/clouds/25/000000/github.png" />Github</a>
+                        </div>
+                        <div class="page-links">
+                            <a href="/login">Login to account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
